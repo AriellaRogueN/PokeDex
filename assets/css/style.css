@@ -1,0 +1,25 @@
+.finder{
+        background-color: red;
+        margin-top: 4em;
+        
+        
+}
+
+.poke-file{
+    background-color: grey;
+    margin-top: 5em;
+    height: 10em;
+}
+
+.container {
+    background-color: red;
+}
+
+
+label{
+    width: 100%;
+    text-align: center;
+}
+
+
+
