@@ -14,7 +14,7 @@ form.addEventListener('submit', function (e) {
 
 function getPokemon() {
     const pokemonRequest = new XMLHttpRequest();
-    pokemonRequest.open('GET', `https://pokeapi.co/api/v2/pokemon-species/${searchedPokemon}`);
+    pokemonRequest.open('GET', `https://pokeapi.co/api/v2/pokemon/${searchedPokemon}`);
     pokemonRequest.onload = addPokemon;
     pokemonRequest.onerror = handleError;
     pokemonRequest.send();
@@ -28,17 +28,28 @@ function handleError() {
 function addPokemon() {
     const data = JSON.parse(this.responseText);
     console.log(data);
-         const name = data.name
-         console.log(name)
-         const tipo = data.egg_groups[0].name
-         const subtipo = data.egg_groups[1].name
-         console.log(tipo)
-         console.log(subtipo)
-         const habitat = data.habitat.name
-         console.log(habitat)
-         const captura = data.capture_rate
-         console.log(captura)
-         const felicidad = data.base_happiness
-         console.log(felicidad)
+    const name = data.name
+    const image = data.sprites.front_default
+    console.log(image)
+    const type = data.type.name
+    console.log(type)
+    const experience = data.base_experience
+    console.log(experience)
+    const weight= data.weight
+    console.log(weight)
+         
 
     }
+
+    /*const name = data.name
+             console.log(name)
+             const tipo = data.egg_groups[0].name
+             const subtipo = data.egg_groups[1].name
+             console.log(tipo)
+             console.log(subtipo)
+             const habitat = data.habitat.name
+             console.log(habitat)
+             const captura = data.capture_rate
+             console.log(captura)
+             const felicidad = data.base_happiness
+             console.log(felicidad) */
