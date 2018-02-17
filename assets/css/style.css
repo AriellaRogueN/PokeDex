@@ -2,6 +2,8 @@ body{
     margin:0;
     padding:0;
     background-color: grey;
+    font-family: 'Press Start 2P',
+    cursive;
 }
 
 header{
@@ -23,6 +25,7 @@ header{
 form{
     padding-top: 2em;
     padding-bottom: 2em;
+    font-size: 10px;
 }
 
 label{
@@ -36,8 +39,8 @@ label{
     height: 200px;
 }
 
-figcaption{
-    font-size: 3em;
+.caption{
+    font-size: 2em;
     color: #07579E;
     background-color:#FFCE00;
     border:1px solid #07579E;
@@ -46,12 +49,25 @@ figcaption{
 figure{
     border: 2px solid black;
     width: 95%;
+    
 }
 
 #insertPokemon{
     padding-bottom: 2em;
 }
 
+#go-btn{
+    background-color: #FFCE00;
+    color:#07579E;
+    font-size: 12px;
+}
 
+p{
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 1em;
+}
 
-
+#collapsePokemon{
+    width:95%;
+}
