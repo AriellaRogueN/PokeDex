@@ -1,15 +1,15 @@
 const form = document.getElementById("search-form");
 const searchPokemon = document.getElementById("pokemon-search");
-const image = document.getElementById("image");
-const info = document.getElementById("info");
+const insert = document.getElementById("insertPokemon");
 let searchedPokemon;
 
 form.addEventListener('submit', function (e) {
 
     e.preventDefault();
-    info.innerHTML = "";
+    insert.innerHTML = "";
     searchedPokemon = searchPokemon.value;
     getPokemon();
+    
 });
 
 function getPokemon() {
@@ -18,7 +18,6 @@ function getPokemon() {
     pokemonRequest.onload = addPokemon;
     pokemonRequest.onerror = handleError;
     pokemonRequest.send();
-
 }
 
 function handleError() {
@@ -29,27 +28,35 @@ function addPokemon() {
     const data = JSON.parse(this.responseText);
     console.log(data);
     const name = data.name
+    console.log(name)
     const image = data.sprites.front_default
     console.log(image)
-    const type = data.type.name
+    const type = data.types[0].type.name
     console.log(type)
     const experience = data.base_experience
     console.log(experience)
     const weight= data.weight
     console.log(weight)
-         
+    
 
-    }
+    //creando elementos.
 
-    /*const name = data.name
-             console.log(name)
-             const tipo = data.egg_groups[0].name
-             const subtipo = data.egg_groups[1].name
-             console.log(tipo)
-             console.log(subtipo)
-             const habitat = data.habitat.name
-             console.log(habitat)
-             const captura = data.capture_rate
-             console.log(captura)
-             const felicidad = data.base_happiness
-             console.log(felicidad) */
+    const figure = document.createElement('figure');
+    const newImage = document.createElement('img')
+    newImage.setAttribute('src', image);
+    newImage.setAttribute('class', 'pknImg')
+    const figcaption = document.createElement('figcaption')
+    const named = document.createTextNode(name)
+
+    //agregando elementos a sus padres.
+    insert.appendChild(figure);
+    figure.appendChild(newImage);
+    figure.appendChild(figcaption);
+    figcaption.appendChild(named);
+    
+};
+    
+
+
+    
+             

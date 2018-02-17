@@ -1,25 +1,57 @@
+body{
+    margin:0;
+    padding:0;
+    background-color: grey;
+}
+
+header{
+ background-color: red;
+}
+
+
 .finder{
         background-color: red;
-        margin-top: 4em;
-        
-        
 }
 
 .poke-file{
-    background-color: grey;
+    
     margin-top: 5em;
     height: 10em;
 }
 
-.container {
-    background-color: red;
-}
 
+form{
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
 
 label{
     width: 100%;
     text-align: center;
+    
 }
+
+.pknImg{
+    width:200px;
+    height: 200px;
+}
+
+figcaption{
+    font-size: 3em;
+    color: #07579E;
+    background-color:#FFCE00;
+    border:1px solid #07579E;
+}
+
+figure{
+    border: 2px solid black;
+    width: 95%;
+}
+
+#insertPokemon{
+    padding-bottom: 2em;
+}
+
 
 
 
